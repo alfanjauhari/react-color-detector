@@ -54,6 +54,11 @@ export default function Home() {
         listType="picture-card"
         showUploadList={false}
         style={{ width: "100px", height: "100px" }}
+        customRequest={({ onSuccess }) => {
+          setTimeout(() => {
+            onSuccess("ok", undefined);
+          }, 0);
+        }}
       >
         {imageUrl ? (
           <img
